@@ -31,6 +31,9 @@ public class SecurityConfig {
                             if (isAdmin) {
                                 response.sendRedirect("/Admin.html"); // Redirect to admin page
                             } else {
+                                response.setContentType("application/json");
+                                response.getWriter().write("{\"message\": \"Logged in successfully\"}");
+                                response.getWriter().flush();
                                 response.sendRedirect("/login/test.html"); // Redirect to regular user page
                             }
                             //temprorary
